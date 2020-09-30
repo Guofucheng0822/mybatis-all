@@ -16,17 +16,21 @@ import java.util.Properties;
  */
 public class JDBCUtil {
 
-    private static String url;
-    private static String username;
-    private static String password;
-    private static String driver;
+    private static String url="url";
+    private static String username="username";
+    private static String password="password";
+    private static String driver="driver";
 
     static {
         try {
             Properties properties=new Properties();
             InputStream inputStream = JDBCUtil.class.getClassLoader().getResourceAsStream("application.properties");
             properties.load(inputStream);
-            Class.forName(properties.getProperty(driver));
+            url=properties.getProperty(url);
+            username=properties.getProperty(username);
+            password=properties.getProperty(password);
+            driver=properties.getProperty(driver);
+            Class.forName(driver);
         } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
@@ -49,6 +53,15 @@ public class JDBCUtil {
     public static Statement getStatement() throws SQLException {
         Connection connection = getConnection();
         return connection.createStatement();
+    }
+    /**
+     * 得到Statement对象
+     *
+     * @return {@link Statement}* @throws SQLException SQLException异常
+     */
+    public static PreparedStatement getPrepareStatement(String sql) throws SQLException {
+        Connection connection = getConnection();
+        return connection.prepareStatement(sql);
     }
     /**
      * 释放资源
