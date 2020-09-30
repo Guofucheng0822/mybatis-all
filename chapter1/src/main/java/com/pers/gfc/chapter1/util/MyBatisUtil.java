@@ -1,6 +1,7 @@
 package com.pers.gfc.chapter1.util;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
@@ -29,5 +30,16 @@ public class MyBatisUtil {
             }
         }
         return sqlSessionFactory;
+    }
+
+    /**
+     * 关闭SqlSession
+     *
+     * @param sqlSession sql会话
+     */
+    public static void close(SqlSession sqlSession){
+        if (sqlSession !=null){
+            sqlSession.close();
+        }
     }
 }
