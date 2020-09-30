@@ -1,4 +1,4 @@
-package com.gfc.chapter1.main;
+package com.pers.gfc.chapter1.main;
 
 import java.io.InputStream;
 import java.sql.Connection;

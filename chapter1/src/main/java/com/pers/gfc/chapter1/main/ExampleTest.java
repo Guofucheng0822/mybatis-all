@@ -1,7 +1,6 @@
-package com.gfc.chapter1.main;
+package com.pers.gfc.chapter1.main;
 
-import com.gfc.chapter1.util.JDBCUtil;
-
+import com.pers.gfc.chapter1.util.JDBCUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,6 +1,4 @@
-package com.gfc.chapter1.util;
-
-import com.gfc.chapter1.main.JdbcExample;
+package com.pers.gfc.chapter1.util;
 
 import java.io.IOException;
 import java.io.InputStream;
