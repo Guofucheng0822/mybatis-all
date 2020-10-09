@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class Role {
-    private Long id;
+    private Integer id;
     private String roleName;
     private String note;
 

@@ -18,12 +18,12 @@ public class Chapter3Main {
         try {
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
             RoleMapper roleMapper = sqlSession.getMapper(RoleMapper.class);
-            Role role = new Role("name", "note");
-            roleMapper.insertRole(role);
+//            Role role = new Role("name", "note");
+//            roleMapper.insertRole(role);
 //            roleMapper.deleteRole(1L);
-//            Role role = roleMapper.getRole(3L);
-//            System.out.println(role);
-//            sqlSession.commit();
+            Role role = roleMapper.getRole(3);
+            System.out.println(role);
+            sqlSession.commit();
         } catch (Exception e) {
             System.err.println(e.getMessage());
             Objects.requireNonNull(sqlSession).rollback();

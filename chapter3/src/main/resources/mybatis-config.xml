@@ -7,7 +7,7 @@
     </properties>
     <!-- 定义别名 -->
     <typeAliases>
-        <typeAlias alias="role" type="com.pers.gfc.chapter2.po.Role"/>
+        <typeAlias alias="role" type="com.pers.gfc.chapter3.po.Role"/>
     </typeAliases>
     <!-- 定义数据库信息.默认使用development数据库构建环境 -->
     <environments default="development">
@@ -29,6 +29,6 @@
 
     <!-- 定义映射器 -->
     <mappers>
-        <mapper resource="com/pers/gfc/chapter2/mapper/roleMapper.xml"/>
+        <mapper resource="com/pers/gfc/chapter3/mapper/roleMapper.xml"/>
     </mappers>
 </configuration>

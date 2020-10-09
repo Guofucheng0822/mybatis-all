@@ -49,7 +49,7 @@ public class DmTypeExample {
           解决方法:使用configuration.getMapperRegistry().addMappers方式
          */
         configuration.addMapper(RoleMapper.class);
-        // configuration.getMapperRegistry().addMappers("com.pers.gfc.chapter2.mapper",RoleMapper.class);
+        // configuration.getMapperRegistry().addMappers("com.pers.gfc.chapter3.mapper",RoleMapper.class);
         SqlSessionFactoryBuilder sqlSessionFactoryBuilder= new SqlSessionFactoryBuilder();
         SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(configuration);
         SqlSession sqlSession = sqlSessionFactory.openSession();

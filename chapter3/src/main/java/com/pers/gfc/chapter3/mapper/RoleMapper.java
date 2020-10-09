@@ -7,7 +7,7 @@ import com.pers.gfc.chapter3.po.Role;
  * 注册当前接口为映射器.
  */
 public interface RoleMapper {
-    Role getRole(Long id);
+    Role getRole(Integer id);
 
     int deleteRole(Long id);
 

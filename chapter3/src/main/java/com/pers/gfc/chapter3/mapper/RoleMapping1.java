@@ -1,6 +1,6 @@
 package com.pers.gfc.chapter3.mapper;
 
-import com.pers.gfc.chapter2.po.Role;
+import com.pers.gfc.chapter3.po.Role;
 import org.apache.ibatis.annotations.Select;
 
 public interface RoleMapping1 {
