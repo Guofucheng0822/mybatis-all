@@ -9,6 +9,10 @@
     <typeAliases>
         <typeAlias alias="role" type="com.pers.gfc.chapter3.po.Role"/>
     </typeAliases>
+
+    <typeHandlers>
+        <package name="com.pers.gfc.chapter3.typeHandle"/>
+    </typeHandlers>
     <!-- 定义数据库信息.默认使用development数据库构建环境 -->
     <environments default="development">
         <environment id="development">

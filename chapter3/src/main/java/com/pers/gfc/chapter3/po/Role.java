@@ -10,8 +10,4 @@ public class Role {
     private String roleName;
     private String note;
 
-    public Role(String roleName, String note) {
-        this.roleName = roleName;
-        this.note = note;
-    }
 }
