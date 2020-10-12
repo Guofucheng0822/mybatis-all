@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pers.gfc.chapter3.mapper.UserMapper">
+    <!--自定义TypeHandler-->
+    <!--查询是根据从数据库查询的下标进行转换成字符串-->
+    <resultMap id="userMap" type="com.pers.gfc.chapter3.po.User">
+        <id property="id" column="id" typeHandler="com.pers.gfc.chapter3.typeHandle.MyIntTypeHandler"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR" javaType="string"/>
+        <result property="cnName" column="cnname" jdbcType="VARCHAR" javaType="string"/>
+        <!--<result property="sex" column="sex" jdbcType="INTEGER" javaType="com.pers.gfc.chapter3.po.SexEnum" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>-->
+        <result property="sex" column="sex" jdbcType="INTEGER" javaType="com.pers.gfc.chapter3.po.SexEnum2" typeHandler="com.pers.gfc.chapter3.typeHandle.SexEnum2TypeHandler"/>
+        <result property="mobile" column="mobile" jdbcType="VARCHAR" javaType="string"/>
+        <result property="email" column="email" jdbcType="VARCHAR" javaType="string"/>
+        <result property="note" column="note" jdbcType="VARCHAR" javaType="string"/>
+    </resultMap>
+    <!--插入枚举定义的下标    #{sex,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},-->
+    <insert id="insertUser" parameterType="com.pers.gfc.chapter3.po.User">
+        insert into t_user (user_name,cnname,sex,mobile,email,note)
+        values(#{userName},#{cnName},
+        #{sex,typeHandler=com.pers.gfc.chapter3.typeHandle.SexEnum2TypeHandler},
+        #{mobile},#{email},#{note})
+    </insert>
+
+    <select id="findById" parameterType="int" resultMap="userMap">
+        select * from t_user where id =#{id}
+    </select>
+</mapper>
