@@ -41,6 +41,11 @@
             <transactionManager type="JDBC">
                 <property name="autoCommit" value="false"/>
             </transactionManager>
+            <!--1.UNPOOLED 非连接池数据库
+                2.POOLED 连接池数据库
+                3.JNDI JNDI数据源
+                4.自定义数据源  如DBCP、Druid  需要实现DateSourceFactory，然后配置
+            -->
             <dataSource type="POOLED">
                 <property name="driver" value="${driver}"/>
                 <property name="url" value="${url}"/>
@@ -53,6 +58,9 @@
             </dataSource>
         </environment>
     </environments>
+    <databaseIdProvider type="">
+
+    </databaseIdProvider>
 
     <!-- 定义映射器 -->
     <mappers>
